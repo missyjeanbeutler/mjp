@@ -6,8 +6,8 @@ angular.module('app', ['ui.router'])
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: '',
-                controller: ''
+                templateUrl: 'home/home.html',
+                controller: 'homeCtrl'
             })
             
 
