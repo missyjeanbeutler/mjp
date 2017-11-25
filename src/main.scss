@@ -1,3 +1,11 @@
 @import './utils/reset';
 
 @import './utils/variables';
+
+@import './utils/fonts';
+
+@import './utils/all';
+
+// COMPONENTS
+@import './components/Home/home';
+@import './components/Menu/menu';
