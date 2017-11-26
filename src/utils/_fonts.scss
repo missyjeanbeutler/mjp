@@ -1,7 +1,13 @@
 @import url("https://use.typekit.net/qas0mav.css");
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: 	"korolev-compressed", sans-serif;
-  font-weight: 300;
-  font-size: 40px;  
+}
+
+h2 {
+  font-size: 20px;
+  color: #222;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 3px;
 }

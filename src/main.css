@@ -44,7 +44,8 @@ a {
   padding: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+  text-decoration: none; }
 
 /* change colours to suit your needs */
 ins {
@@ -91,10 +92,15 @@ input, select {
 button {
   outline: none; }
 
-h1, h2, h3 {
-  font-family: "korolev-compressed", sans-serif;
-  font-weight: 300;
-  font-size: 40px; }
+h1, h2, h3, h4 {
+  font-family: "korolev-compressed", sans-serif; }
+
+h2 {
+  font-size: 20px;
+  color: #222;
+  letter-spacing: 2px;
+  font-weight: 500;
+  padding: 3px; }
 
 .background {
   background: url("./assets/images/oceans/cabo-2.jpg") center no-repeat;
@@ -109,5 +115,35 @@ h1, h2, h3 {
   left: 50px;
   top: 0;
   bottom: 0;
-  background: #EFEFEF;
-  opacity: .7; }
+  background: url("./assets/menu.svg") center no-repeat;
+  background-size: cover;
+  background-position: top;
+  opacity: .75;
+  padding: 150px 0 150px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+
+.menu {
+  margin: 10px 20px;
+  height: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+
+.selected {
+  transition: 1s;
+  background: #DFD9DC; }
+
+.logo {
+  height: 100px;
+  margin: 0 auto; }
+
+.gallery {
+  width: 70vw; }
+
+.gallery_image {
+  width: 100%; }
+
+.image_container {
+  width: 40vw; }

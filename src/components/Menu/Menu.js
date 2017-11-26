@@ -4,9 +4,11 @@ import { NavLink } from 'react-router-dom';
 export default function Menu() {
   return (
     <div className='menu_container'>
-      <NavLink to='/'><h3>HOME</h3></NavLink>
-      <NavLink to='/work'><h3>WORK</h3></NavLink>
-      <NavLink to='/contact'><h3>CONTACT</h3></NavLink>
+      <div className='menu'>
+        <NavLink activeClassName='selected' exact to='/'><h2>HOME</h2></NavLink>
+        <NavLink activeClassName='selected' to='/work'><h2>WORK</h2></NavLink>
+        <NavLink activeClassName='selected' to='/contact'><h2>CONTACT</h2></NavLink>
+      </div>
     </div>
   )
 }

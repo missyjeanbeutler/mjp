@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Home from './components/Home/Home';
 import Menu from './components/Menu/Menu';
+import router from './router.js';
 
 class App extends Component {
   render() {
     return (
       <div>
        <Menu />
-       <Home />
+       { router }
       </div>
     );
   }
