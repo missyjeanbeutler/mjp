@@ -1,11 +1,9 @@
 .gallery {
-  width: 70vw;
-}
-
-.gallery_image {
-  width: 100%;
-}
-
-.image_container {
-  width: 40vw;
+  margin-top: 10vh;
+  height: 80vh;
+  display: flex;
+  padding-left: 270px;
+  img {
+    height: 100%;
+  }
 }
