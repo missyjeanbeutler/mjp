@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import images from './images.js';
-import full from '../../assets/cursor_full.png';
-import thirds from '../../assets/cursor_thirds.png';
 
 export default class Gallery extends Component {
   constructor() {
     super()
     this.state = {
-      thirds: false
+      thirds: false,
+      fade: false
     }
   }
 
   changeView = () => {
-    this.setState({thirds: !this.state.thirds})
+    this.setState({fade: true})
+    setTimeout(() => {
+      this.setState({fade: false, thirds: !this.state.thirds})
+    }, 300)
   }
 
   render() {
@@ -20,9 +22,11 @@ export default class Gallery extends Component {
     let gallery_view = this.state.thirds ? {
       "width": Math.floor(images.length / 3 * 250 ) + 'px',
       "flexWrap": "wrap",
-      "cursor": "url(" + full + "), auto"
+      "cursor": "pointer",
+      "opacity": this.state.fade ? 0 : 1
     } : {
-      "cursor": "url(" + thirds  + "), auto"
+      "cursor": "pointer",
+      "opacity": this.state.fade ? 0 : 1
     }
 
     let gallery_image_view = this.state.thirds ? {
@@ -34,8 +38,10 @@ export default class Gallery extends Component {
     }
 
     const allImages = images.map((e, i) => (
-      <div key={i} style={ gallery_image_view }>
-        <img src={e} alt='ocean'/>
+      <div key={i} style={ gallery_image_view } id={`img${i}`}>
+        <a href={`#img${i}`}>
+          <img src={e} alt='ocean'/>
+        </a>
       </div>
     ))
  

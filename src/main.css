@@ -143,6 +143,7 @@ h2 {
   margin-top: 10vh;
   height: 80vh;
   display: flex;
-  padding-left: 270px; }
+  padding-left: 270px;
+  transition: ease-in .3s; }
   .gallery img {
     height: 100%; }
