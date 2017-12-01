@@ -3,8 +3,17 @@
   height: 80vh;
   display: flex;
   padding-left: 270px;
-  transition: ease-in .3s;
   img {
     height: 100%;
   }
+}
+
+.fade_overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  // display: none;
+  position: relative;
+  top: 0;
+  transition-duration: 1s;
 }

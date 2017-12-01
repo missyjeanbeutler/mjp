@@ -1,0 +1,52 @@
+.work_container {
+  width: 100vw;
+  height: 300px;
+  margin: calc((100vh - 300px) / 2) auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.work_links {
+  // color: #DFD9DC;
+  // color: black;
+  // transition: .4s;
+  // font-size: 35px;
+  // letter-spacing: 3px;
+  width: 100%;
+}
+
+.work_link_container {
+  // background: url('./assets/images/oceans/cabo-2.jpg') no-repeat center;
+  // background-size: cover;
+  // height: 50px;
+  padding-top: 0;
+  width: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // opacity: 0;
+  text-align: center;
+  transition: .3s;
+}
+
+.work_link_container:hover {
+  // opacity: 1;
+  background: url('./assets/images/oceans/cabo-2.jpg') no-repeat ;
+  height: 200px;
+  padding-top: 80px;
+  color: transparent;
+}
+
+// .oceans:hover {
+//   background: url('./assets/images/oceans/cabo-2.jpg') no-repeat center;
+//   background-size: cover;
+//   transition: .4s;
+// }
+
+// .outdoors:hover {
+//   background: url('./assets/images/oceans/cabo-2.jpg') no-repeat center;
+//   background-size: cover;
+//   transition: .4s;
+// }
