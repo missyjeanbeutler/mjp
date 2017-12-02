@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
-import images from './images.js';
-import isotope from 'isotope-layout';
+import oceans from './oceans_images.js';
 
 export default class Gallery extends Component {
 
-  componentDidMount() {
-    $('.gallery_image').isotope({
-      layoutMode: 'masonryHorizontal',
-      masonryHorizontal: {
-        rowHeight: 50
-      }
-    })
-  }
-
   render() {
 
-    const allImages = images.map((e, i) => (
+    const images = oceans.map((e, i) => (
       <div key={i} className='gallery_image'>
         <img src={e}/>
       </div>
@@ -24,7 +13,7 @@ export default class Gallery extends Component {
 
     return (
       <div>
-        { allImages }
+        { images }
       </div>
     )
   }
