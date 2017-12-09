@@ -102,9 +102,7 @@ h2 {
   font-weight: 500;
   padding: 3px; }
 
-.background {
-  background: url("./assets/images/oceans/cabo-2.jpg") center no-repeat;
-  background-size: cover;
+.home_background {
   width: calc(100vw - 20px);
   height: calc(100vh - 20px);
   margin: 10px; }
@@ -115,6 +113,7 @@ h2 {
   left: 50px;
   top: 0;
   bottom: 0;
+  z-index: 2;
   background: url("./assets/menu.svg") center no-repeat;
   background-size: cover;
   background-position: top;
@@ -139,11 +138,16 @@ h2 {
   height: 100px;
   margin: 0 auto; }
 
-.gallery {
-  width: 70vw; }
+.gallery_container {
+  height: 90vh;
+  margin: 5vh 0 0 265px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; }
 
-.gallery_image {
-  width: 100%; }
-
-.image_container {
-  width: 40vw; }
+.gallery_image_container {
+  height: calc(100% / 3 - 10px);
+  margin: 5px; }
+  .gallery_image_container img {
+    height: 100%;
+    cursor: pointer; }
