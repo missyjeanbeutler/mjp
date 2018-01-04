@@ -6,7 +6,8 @@ export default class Gallery extends Component {
   constructor() {
     super()
     this.state = {
-      thirds: true
+      thirds: true,
+      mouseX: 0
     }
   }
 
@@ -14,12 +15,17 @@ export default class Gallery extends Component {
     let el = e.target
     this.setState({
       thirds: !this.state.thirds
-    }, () => el.scrollIntoView())
+    }, () => {
+      let remainder = ( window.innerWidth - el.width ) / 2
+      el.scrollIntoView()
+      console.log(el.getBoundingClientRect().left - remainder, ' half')
+      // window.scrollTo(el.getBoundingClientRect().left - remainder, 0)
+    })
   }
 
   render() {
   
-    let styles = { height: this.state.thirds ? 'calc(100% / 3 - 10px)' : '90vh' }
+    let styles = { height: this.state.thirds ? 'calc(100% / 3 - 10px)' : '75vh' }
 
     return (
         <StaggeredMotion

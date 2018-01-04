@@ -1,47 +1,49 @@
-import React, { Component } from 'react';
-import { TransitionMotion, spring } from 'react-motion';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-export default class Home extends Component {
-  constructor() {
-    super()
-    this.state = {
-      images: ['cabo-2.jpg', 'jamaica-1.jpg', 'jamaica-3.jpg', 'jamaica-4.jpg'],
-      num: 0,
-      fade: false
-    }
-  }
+const galleries = [
+  {
+    style: 'home_oceans',
+    title: 'OCEANS',
+    url: '/gallery/oceans'
+  },
+  {
+    style: 'home_mountains',
+    title: 'MOUNTAINS',
+    url: '/gallery/mountains'
+  },
+  // {
+  //   style: 'home_polaroids',
+  //   title: 'POLAROIDS',
+  //   url: '/gallery/polaroids'
+  // },
+  // {
+  //   style: 'home_travel',
+  //   title: 'TRAVEL',
+  //   url: '/gallery/travel'
+  // }
+]
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.setState({num: this.state.num === 3 ? 0 : this.state.num + 1, fade: true})
-      this.setState({fade: false})
-    }, 3000)
-  }
+export default function Home() {
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-    this.setState({fade: !this.state.fade})
-  }
-
-  willLeave() {
-    return {opacity: spring(0)}
-  }
-
-  render() { 
-
-    let style = {background: `url(${require(`../../assets/images/oceans/${this.state.images[this.state.num]}`)}) center no-repeat`, backgroundSize: 'cover' }
-
-    return (
+  const galleriesJSX = galleries.map((e, i) => (
+    <div key={i} className={'home_gallery ' + e.style}>
       <div>
-        {this.state.fade ? null : <TransitionMotion 
-          styles={[{key: this.state.images[this.state.num], style: {opacity: spring(1)}}]}
-          willLeave={this.willLeave}
-          defaultStyles={[{key: this.state.images[this.state.num], style: {opacity: 0}}]}>
-            {(motion_style) => (
-              <div className='home_background' style={{...motion_style[0].style, ...style}} transition={this.transition}/>
-            )}
-        </TransitionMotion>}
+        <h2>{e.title}</h2>
+        <NavLink to={e.url}><p>see more</p></NavLink>
       </div>
-    )
-  }
+    </div>
+  ))
+
+  return (
+    <div>
+      <div className='home_splash'/>
+      <div className='home_header'>
+        <h1>GALLERIES</h1>
+      </div>
+      <main className='home_galleriesContainer'>
+        { galleriesJSX }
+      </main>
+    </div>
+  )
 }
