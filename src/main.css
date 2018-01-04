@@ -1,4 +1,5 @@
-@import url("https://use.typekit.net/qas0mav.css");
+@import url("https://fonts.googleapis.com/css?family=PT+Mono|PT+Serif:700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500");
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -92,58 +93,191 @@ input, select {
 button {
   outline: none; }
 
-h1, h2, h3, h4 {
-  font-family: "korolev-compressed", sans-serif; }
+@font-face {
+  font-family: 'bold';
+  src: url("./assets/fonts/TGL_0-1451Eng.ttf") format("truetype"); }
+
+h1, h2 {
+  font-family: 'bold';
+  font-weight: 200; }
+
+h1 {
+  font-size: 45px;
+  letter-spacing: 7px; }
+
+h3, h4, p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transform: scale(0.89, 1); }
 
 h2 {
-  font-size: 20px;
-  color: #222;
+  color: black;
   letter-spacing: 2px;
-  font-weight: 500;
-  padding: 3px; }
+  padding: 3px;
+  font-size: 30px; }
 
-.background {
-  background: url("./assets/images/oceans/cabo-2.jpg") center no-repeat;
+h3 {
+  letter-spacing: 2px;
+  color: #333;
+  font-size: 14px; }
+
+.home_splash {
+  width: 100vw;
+  height: 100vh;
+  background: url("./assets/images/oceans/jamaica-1.jpg") no-repeat center;
   background-size: cover;
-  width: calc(100vw - 20px);
-  height: calc(100vh - 20px);
-  margin: 10px; }
+  margin-bottom: 50px; }
+
+.home_header {
+  display: flex;
+  justify-content: center;
+  padding: 0 45px 0 96px; }
+  .home_header h1 {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
+.home_galleriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 6vw 45px 6vw 96px;
+  height: calc(100vw - 141px); }
+
+.home_gallery {
+  width: 48%;
+  height: 48%;
+  margin: 1.5vw 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .home_gallery div {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(221, 223, 226, 0.6) 0%, rgba(61, 65, 94, 0.6) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px; }
+    .home_gallery div h2 {
+      padding-bottom: 15px; }
+    .home_gallery div p {
+      background: rgba(255, 255, 255, 0.5);
+      padding: 10px 15px;
+      border-radius: 5em;
+      color: black; }
+
+.home_oceans {
+  background: url("./assets/images/oceans/cabo-2.jpg") no-repeat center;
+  background-size: cover; }
+
+.home_mountains {
+  background: url("./assets/images/mountains/outdoors-2.jpg") no-repeat center;
+  background-size: cover; }
+
+.home_polaroids {
+  background: url("./assets/images/oceans/jamaica-2.jpg") no-repeat center;
+  background-size: cover; }
+
+.home_travel {
+  background: url("./assets/images/oceans/jamaica-15.jpg") no-repeat center;
+  background-size: cover; }
 
 .menu_container {
-  width: 175px;
   position: fixed;
-  left: 50px;
   top: 0;
   bottom: 0;
-  background: url("./assets/menu.svg") center no-repeat;
-  background-size: cover;
-  background-position: top;
-  opacity: .75;
-  padding: 150px 0 150px 0;
+  left: 0;
+  right: 0;
+  background: #D0DCDE;
+  opacity: 0.85;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end; }
+  justify-content: space-between;
+  z-index: 1; }
+
+.menu_x {
+  position: fixed;
+  top: 85px;
+  right: 85px;
+  background: url("./assets/x-15.svg") no-repeat center;
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  cursor: pointer; }
 
 .menu {
-  margin: 10px 20px;
-  height: 115px;
+  height: 230px;
+  text-align: right;
+  margin: calc((100vh - 230px)/2) 0 0 0; }
+  .menu a h3 {
+    margin: 25px 40px 25px 0;
+    padding-right: 40px; }
+    .menu a h3:hover {
+      color: #777; }
+
+.menu_info {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; }
+  justify-content: space-between; }
 
-.selected {
-  transition: 1s;
-  background: #DFD9DC; }
+.menu_logo {
+  background: url("./assets/mini-logo.svg") no-repeat center;
+  height: 40px;
+  width: 40px;
+  margin: 28px; }
 
-.logo {
-  height: 100px;
-  margin: 0 auto; }
+.menu_closedContainer {
+  position: fixed;
+  top: 0px;
+  left: 0px; }
 
-.gallery {
-  width: 70vw; }
+.menu_contact {
+  margin-left: 50px; }
+  .menu_contact h3 {
+    margin: 10px 0; }
+  .menu_contact a h3:hover {
+    color: #777; }
 
-.gallery_image {
-  width: 100%; }
+.menu_socials {
+  margin: 0 0 50px 45px;
+  display: flex; }
+  .menu_socials .menu_insta {
+    background: url("./assets/social-insta-14.svg") no-repeat center; }
+  .menu_socials .menu_fb {
+    background: url("./assets/social-fb-13.svg") no-repeat center; }
+  .menu_socials div {
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    margin: 5px; }
 
-.image_container {
-  width: 40vw; }
+.menu_selected h3 {
+  border-right: 2px solid black;
+  color: black; }
+
+.menu_hamburger {
+  background: url("./assets/hamburger-16.svg") no-repeat center;
+  background-size: cover;
+  height: 20px;
+  width: 25px;
+  position: fixed;
+  left: 35px;
+  margin-top: calc(100vh / 2 - 100px);
+  cursor: pointer; }
+
+.gallery_container {
+  height: 90vh;
+  margin: 5vh 0 0 96px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center; }
+
+.gallery_image_container {
+  height: calc(100% / 3 - 10px);
+  margin: 5px; }
+  .gallery_image_container img {
+    height: 100%;
+    cursor: pointer; }
