@@ -13,27 +13,34 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 45px;
-  letter-spacing: 7px;
+  color: black;
+  letter-spacing: 4px;
+  padding: 10px 0.5vw;
+  font-size: 36px;
 }
 
-h3, h4, p {
+h4, p {
   // font-family: 'PT Mono', monospace;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  line-height: 18px;
   transform: scale(.89, 1);
 }
 
 h2 {
-  color: black;
   letter-spacing: 2px;
-  padding: 3px;
-  font-size: 30px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  transform: scale(.89, 1);
+  font-weight: 800;
 }
 
 h3 {
   letter-spacing: 2px;
   color: #333;
-  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  transform: scale(.89, 1);
 }

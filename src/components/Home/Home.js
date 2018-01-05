@@ -12,34 +12,37 @@ const galleries = [
     title: 'MOUNTAINS',
     url: '/gallery/mountains'
   },
-  // {
-  //   style: 'home_polaroids',
-  //   title: 'POLAROIDS',
-  //   url: '/gallery/polaroids'
-  // },
-  // {
-  //   style: 'home_travel',
-  //   title: 'TRAVEL',
-  //   url: '/gallery/travel'
-  // }
+  {
+    style: 'home_polaroids',
+    title: 'POLAROIDS',
+    url: '/gallery/polaroids'
+  },
+  {
+    style: 'home_travel',
+    title: 'TRAVEL',
+    url: '/gallery/travel'
+  }
 ]
 
 export default function Home() {
 
   const galleriesJSX = galleries.map((e, i) => (
-    <div key={i} className={'home_gallery ' + e.style}>
-      <div>
-        <h2>{e.title}</h2>
-        <NavLink to={e.url}><p>see more</p></NavLink>
+    <NavLink key={i} to={e.url} className='home_gallery'>
+      <div className={e.style}>
+        <div>
+          <h2>{e.title}</h2>
+          <p>see more</p>
+        </div>
       </div>
-    </div>
+    </NavLink>
   ))
 
   return (
-    <div>
-      <div className='home_splash'/>
+    <div className='home_splash'>
       <div className='home_header'>
-        <h1>GALLERIES</h1>
+        <h1>MISSY J PHOTO</h1>
+        <p>Missy is a Utah based photographer that focuses on landscapes and experiences.</p>
+        <div/>
       </div>
       <main className='home_galleriesContainer'>
         { galleriesJSX }
