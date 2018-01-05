@@ -1,0 +1,35 @@
+.contact_logoFull {
+  @include logo;
+}
+
+.contact_line {
+  height: 125px;
+  border-right: $line;
+  padding-left: 10px;
+}
+
+.contact_socials {
+  @include socials;
+}
+
+.contact_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  padding-left: 96px;
+  & > div {
+    margin: 25px;
+  }
+}
+
+.contact_contact {
+  margin: 50px 0;
+  h3 {
+    margin: 10px 0;
+  }
+  a h3:hover {
+    color: #777;
+  }
+}

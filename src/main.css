@@ -227,28 +227,26 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%; }
+  width: 100%;
+  padding: 50px 0 50px 50px; }
 
 .menu_logoFull {
   background: url("./assets/full-logo.svg") no-repeat center;
   background-size: cover;
   height: 130px;
-  width: 130px;
-  margin: 50px 0 0 50px; }
+  width: 130px; }
 
-.menu_contact {
-  margin-left: 50px; }
-  .menu_contact h3 {
-    margin: 10px 0; }
-  .menu_contact a h3:hover {
-    color: #777; }
+.menu_contact h3 {
+  margin: 10px 0; }
+
+.menu_contact a h3:hover {
+  color: #777; }
 
 .menu_socials {
-  margin: 0 0 50px 45px;
   display: flex; }
-  .menu_socials .menu_insta {
+  .menu_socials .insta {
     background: url("./assets/social-insta-14.svg") no-repeat center; }
-  .menu_socials .menu_fb {
+  .menu_socials .fb {
     background: url("./assets/social-fb-13.svg") no-repeat center; }
   .menu_socials div {
     background-size: cover;
@@ -295,3 +293,43 @@ h3 {
   .gallery_imageFull img {
     height: 100%;
     cursor: pointer; }
+
+.contact_logoFull {
+  background: url("./assets/full-logo.svg") no-repeat center;
+  background-size: cover;
+  height: 130px;
+  width: 130px; }
+
+.contact_line {
+  height: 125px;
+  border-right: 1.5px solid rgba(0, 0, 0, 0.2);
+  padding-left: 10px; }
+
+.contact_socials {
+  display: flex; }
+  .contact_socials .insta {
+    background: url("./assets/social-insta-14.svg") no-repeat center; }
+  .contact_socials .fb {
+    background: url("./assets/social-fb-13.svg") no-repeat center; }
+  .contact_socials div {
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    margin: 5px; }
+
+.contact_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  padding-left: 96px; }
+  .contact_info > div {
+    margin: 25px; }
+
+.contact_contact {
+  margin: 50px 0; }
+  .contact_contact h3 {
+    margin: 10px 0; }
+  .contact_contact a h3:hover {
+    color: #777; }

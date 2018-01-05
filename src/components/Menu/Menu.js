@@ -44,8 +44,8 @@ export default class Menu extends Component {
                       <a href='tel:1-801-368-3141'><h3>801.368.3141</h3></a>
                     </div>
                     <div className='menu_socials' >
-                      <a href=''><div className='menu_insta'/></a>
-                      <a href=''><div className='menu_fb'/></a>
+                      <a href=''><div className='insta'/></a>
+                      <a href=''><div className='fb'/></a>
                     </div>
                 </div>
                 <div style={{width: '100%'}}>

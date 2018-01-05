@@ -3,5 +3,20 @@
   background-size: cover;
   height: 130px;
   width: 130px;
-  margin: 50px 0 0 50px;
+}
+
+@mixin socials {
+  display: flex; 
+  .insta {
+    background: url('./assets/social-insta-14.svg') no-repeat center;
+  }
+  .fb {
+    background: url('./assets/social-fb-13.svg') no-repeat center;
+  }
+  div {
+    background-size: cover;
+    height: 50px;
+    width:50px;
+    margin: 5px;
+  }
 }
