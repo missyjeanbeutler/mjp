@@ -21,42 +21,46 @@ export default class Menu extends Component {
   render() {
 
     let menu = [
-      <div className='menu_info'>
-          <div className='menu_logo'/>
-          <div className='menu_contact' >
-            <h3>MISSY J PHOTO</h3>
-            <h3>based in the Orem/Provo Utah area</h3>
-            <br/>
-            <br/>
-            <a href='mailto:missyjphoto@gmail.com'><h3>missyjphoto@gmail.com</h3></a>
-            <a href='tel:1-801-368-3141'><h3>801.368.3141</h3></a>
-          </div>
-          <div className='menu_socials' >
-            <a href=''><div className='menu_insta'/></a>
-            <a href=''><div className='menu_fb'/></a>
-          </div>
-      </div>,
-      <div style={{width: '100%'}}>
-        <div className='menu_x' onClick={this.props.close} />
-        <NavLinks close={this.props.close} />
+      <div className='menu_fullBackground'/>,
+      <div className='menu_fullColumns'>
+        <div className='menu_info'>
+            <div className='menu_logo'/>
+            <div className='menu_contact' >
+              <h3>MISSY J PHOTO</h3>
+              <h3>based in the Orem/Provo Utah area</h3>
+              <br/>
+              <br/>
+              <a href='mailto:missyjphoto@gmail.com'><h3>missyjphoto@gmail.com</h3></a>
+              <a href='tel:1-801-368-3141'><h3>801.368.3141</h3></a>
+            </div>
+            <div className='menu_socials' >
+              <a href=''><div className='menu_insta'/></a>
+              <a href=''><div className='menu_fb'/></a>
+            </div>
+        </div>
+        <div style={{width: '100%'}}>
+          <div className='menu_x' onClick={this.props.close} />
+          <NavLinks close={this.props.close} />
+        </div>
       </div>
     ]
 
     return (
       <div>
         <StaggeredMotion
-        defaultStyles={[{width: 0, opacity: 0}, {width: 0, opacity: 0}]}
+        defaultStyles={[{left: 0}, {left: 0, opacity: 0}]}
         styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
           return i === 0
-            ? {width: spring(this.state.closed ? window.innerWidth : 0), opacity: spring(this.state.closed ? 1 : 0)}
-            : {width: spring(prevInterpolatedStyles[i - 1].width), opacity: spring(prevInterpolatedStyles[i - 1].opacity)}
+            ? {left: spring(this.state.closed ? 0 : -window.innerWidth)}
+            : {left: spring(prevInterpolatedStyles[i - 1].left), opacity: spring(this.state.closed ? 1 : 0)}
         })}>
         {style => (
               <div>
                 {style.map((style, i) => (
                   <div key={i} style={{...style, 
-                    height: '100vh', background: i !== 0 ? 'transparent' :  '#D0DCDE'}}
-                    className='menu_container'>
+                    position: 'fixed',
+                    top: 0,
+                    bottom: 0}}>
                     {menu[i]}
                   </div>
                 ))}
