@@ -29,7 +29,8 @@ export default class Menu extends Component {
             <div style={{...style, 
               position: 'fixed',
               top: 0,
-              bottom: 0}}>
+              bottom: 0,
+              display: style.left === -window.innerWidth ? 'none' : 'block'}}>
               <div className='menu_openContainer'>
                 <div className='menu_info'>
                     <div className='menu_logoFull'/>

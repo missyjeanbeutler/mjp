@@ -1,15 +1,15 @@
-.gallery_container {
-  height: 90vh;
-  margin: 5vh 0 0 96px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
+.gallery_imageThirds {
+  width:  100%;
+  margin-bottom: 5px;
+  img {
+    width: 100%; 
+    cursor: pointer;
+  }
 }
 
-.gallery_image_container {
-  height: calc(100% / 3 - 10px);
+.gallery_imageFull {
   margin: 5px;
+  height: calc(100% - 10px);
   img {
     height: 100%;
     cursor: pointer;
