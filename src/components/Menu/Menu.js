@@ -1,42 +1,77 @@
 import React, { Component } from 'react';
-import { TransitionMotion, spring } from 'react-motion';
+import { Motion, StaggeredMotion, spring } from 'react-motion';
 import NavLinks from './NavLinks/NavLinks';
 
 export default class Menu extends Component {
-
-  willLeave() {
-    console.log('leaving!')
-    return {width: spring(0), opacity: spring(0)}
+  constructor(props) {
+    super(props)
+    this.state = {
+      closed: props.menu
+    }
+  }
+ 
+  componentWillReceiveProps(newProps) {
+    if(newProps.menu !== this.state.closed) {
+      this.setState({
+        closed: newProps.menu
+      })
+    }
   }
 
   render() {
+
+    let menu = [
+      <div className='menu_info'>
+          <div className='menu_logo'/>
+          <div className='menu_contact' >
+            <h3>MISSY J PHOTO</h3>
+            <h3>based in the Orem/Provo Utah area</h3>
+            <br/>
+            <br/>
+            <a href='mailto:missyjphoto@gmail.com'><h3>missyjphoto@gmail.com</h3></a>
+            <a href='tel:1-801-368-3141'><h3>801.368.3141</h3></a>
+          </div>
+          <div className='menu_socials' >
+            <a href=''><div className='menu_insta'/></a>
+            <a href=''><div className='menu_fb'/></a>
+          </div>
+      </div>,
+      <div style={{width: '100%'}}>
+        <div className='menu_x' onClick={this.props.close} />
+        <NavLinks close={this.props.close} />
+      </div>
+    ]
+
     return (
-      <TransitionMotion
-        styles={[{key: 'menu', style: {width: spring(window.innerWidth), opacity: spring(0.85)}}]}
-        defaultStyles={[{key: 'menu', style: {width: 0, opacity: 0}}]}
-        willLeave={this.willLeave}>
-        {(motion_style) => (
-              <div className='menu_container' style={{...motion_style[0].style}}>
-                <div className='menu_info'>
-                  <div className='menu_logo'/>
-                  <div className='menu_contact' style={{...motion_style[0].style.opacity}}>
-                    <h3>MISSY J PHOTO</h3>
-                    <h3>based in the Orem/Provo Utah area</h3>
-                    <br/>
-                    <br/>
-                    <a href='mailto:missyjphoto@gmail.com'><h3>missyjphoto@gmail.com</h3></a>
-                    <a href='tel:1-801-368-3141'><h3>801.368.3141</h3></a>
+      <div>
+        <StaggeredMotion
+        defaultStyles={[{width: 0, opacity: 0}, {width: 0, opacity: 0}]}
+        styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
+          return i === 0
+            ? {width: spring(this.state.closed ? window.innerWidth : 0), opacity: spring(this.state.closed ? 1 : 0)}
+            : {width: spring(prevInterpolatedStyles[i - 1].width), opacity: spring(prevInterpolatedStyles[i - 1].opacity)}
+        })}>
+        {style => (
+              <div>
+                {style.map((style, i) => (
+                  <div key={i} style={{...style, 
+                    height: '100vh', background: i !== 0 ? 'transparent' :  '#D0DCDE'}}
+                    className='menu_container'>
+                    {menu[i]}
                   </div>
-                  <div className='menu_socials' style={{...motion_style[0].style.opacity}}>
-                    <a href=''><div className='menu_insta'/></a>
-                    <a href=''><div className='menu_fb'/></a>
-                  </div>
-                </div>
-                <div className='menu_x' onClick={this.props.close}/>
-                <NavLinks close={this.props.close}/>
+                ))}
               </div>
-        )}
-      </TransitionMotion>
+          )}
+        </StaggeredMotion>
+        <Motion style={{width: spring(this.state.closed ? 0 : 25), opacity: spring(this.state.closed ? 0 : 1)}}>
+          {style => (
+            <div className='menu_closedContainer'>
+              <div className='menu_logo'/>
+              <div className='menu_hamburger' onClick={this.props.open} style={{...style}}/>
+            </div>
+          )}
+        </Motion>
+      </div>
     )
   }
 }

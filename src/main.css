@@ -189,18 +189,13 @@ h3 {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: #D0DCDE;
   opacity: 0.85;
   display: flex;
-  justify-content: space-between;
-  z-index: 1; }
+  justify-content: space-between; }
 
 .menu_x {
-  position: fixed;
-  top: 85px;
-  right: 85px;
+  float: right;
+  margin: 70px 100px;
   background: url("./assets/x-15.svg") no-repeat center;
   background-size: cover;
   height: 20px;
@@ -220,7 +215,8 @@ h3 {
 .menu_info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 100%; }
 
 .menu_logo {
   background: url("./assets/mini-logo.svg") no-repeat center;
@@ -231,7 +227,8 @@ h3 {
 .menu_closedContainer {
   position: fixed;
   top: 0px;
-  left: 0px; }
+  left: 0px;
+  z-index: 3; }
 
 .menu_contact {
   margin-left: 50px; }

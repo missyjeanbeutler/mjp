@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StaggeredMotion, spring } from 'react-motion';
+import { TransitionMotion, spring } from 'react-motion';
 import oceans from './oceans_images.js';
 import axios from 'axios';
 
@@ -26,7 +26,7 @@ export default class Gallery extends Component {
 
   componentDidMount() { 
     axios.get(`/api/images/${this.props.match.params.name}`).then(res => {
-      let images = res.data.map(e => require(`../../assets/images/${this.props.match.params.name}/${e}`))
+      let images = res.data.map(e => { return {key: e, data: {url: require(`../../assets/images/${this.props.match.params.name}/${e}`)}}})
       this.setState({
         images: images
       })
@@ -35,8 +35,10 @@ export default class Gallery extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(!(nextProps.match.params.name === this.props.match.params.name)) {
+      this.setState({images:[]})
       axios.get(`/api/images/${nextProps.match.params.name}`).then(res => {
-        let images = res.data.map(e => require(`../../assets/images/${this.props.match.params.name}/${e}`))
+        let images = res.data.map(e => { return {key: e, data: {url: require(`../../assets/images/${this.props.match.params.name}/${e}`)}}})
+        console.log(images)
         this.setState({
           images: images
         })
@@ -52,25 +54,28 @@ export default class Gallery extends Component {
       <div>
         {
           this.state.images.length ?
-        <StaggeredMotion
-          defaultStyles={this.state.images.map(e => { return {o: 0}})}
-          styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
-            return i === 0 ? {o: spring(1)} : {o: spring(prevInterpolatedStyles[i - 1].o)}
-          })}>
+        <TransitionMotion
+          defaultStyles={this.state.images.map(e => { return {...e, style: {o: 0}}})}
+          // styles={prevInterpolatedStyles => prevInterpolatedStyles.map((_, i) => {
+          //   return i === 0 ? {...e, o: spring(1)} : {...e, o: spring(prevInterpolatedStyles[i - 1].o)}
+          // })}
+          styles={this.state.images.map(e => {return {...e, style: {o: spring(1)}}})}
+          willEnter={() => {style: {o: 0}}}
+          willLeave={() => {style: {o: spring(0)}}}>
           {interpolatingStyles => 
             <div className="gallery_container">
-              {interpolatingStyles.map((style, i) => (
+              {interpolatingStyles.map(({key, style, data}, i) => (
                   <div key={i} className='gallery_image_container' 
                       style={{opacity: style.o, ...styles}}
                       onClick={this.changeSize}
-                      id={this.state.images[i]}>
-                    <img src={this.state.images[i]} alt='oceans'/> 
+                      id={key}>
+                    <img src={data.url} alt='oceans'/> 
                   </div>
                 )
               )}
             </div>
           }
-        </StaggeredMotion>
+        </TransitionMotion>
         :
         null }
       </div>
