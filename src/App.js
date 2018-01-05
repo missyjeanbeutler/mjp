@@ -6,34 +6,27 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      menu: false
+      menuOpen: false
     }
   }
 
   closeMenu = () => {
     this.setState({
-      menu: false
+      menuOpen: false
     })
   }
 
   openMenu = () => {
     this.setState({
-      menu: true
+      menuOpen: true
     })
   }
 
   render() {
     return (
       <div>
-          { this.state.menu ? 
-            <Menu close={this.closeMenu}/>
-            :
-            <div className='menu_closedContainer'>
-              <div className='menu_logo'/>
-              <div className='menu_hamburger' onClick={this.openMenu}/>
-            </div>
-          }
-      { routes }
+        <Menu close={this.closeMenu} open={this.openMenu} menu={this.state.menuOpen}/>
+        { routes }
       </div>
     );
   }

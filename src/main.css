@@ -185,22 +185,19 @@ h3 {
   background: url("./assets/images/oceans/jamaica-15.jpg") no-repeat center;
   background-size: cover; }
 
-.menu_container {
+.menu_openContainer {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background: #D0DCDE;
-  opacity: 0.85;
   display: flex;
   justify-content: space-between;
-  z-index: 1; }
+  z-index: 1;
+  width: 100%;
+  background: rgba(208, 220, 222, 0.85); }
 
 .menu_x {
-  position: fixed;
-  top: 85px;
-  right: 85px;
+  float: right;
+  margin: 70px 100px;
   background: url("./assets/x-15.svg") no-repeat center;
   background-size: cover;
   height: 20px;
@@ -220,18 +217,15 @@ h3 {
 .menu_info {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 100%; }
 
-.menu_logo {
-  background: url("./assets/mini-logo.svg") no-repeat center;
-  height: 40px;
-  width: 40px;
-  margin: 28px; }
-
-.menu_closedContainer {
-  position: fixed;
-  top: 0px;
-  left: 0px; }
+.menu_logoFull {
+  background: url("./assets/full-logo.svg") no-repeat center;
+  background-size: cover;
+  height: 130px;
+  width: 130px;
+  margin: 50px 0 0 50px; }
 
 .menu_contact {
   margin-left: 50px; }
@@ -257,6 +251,18 @@ h3 {
   border-right: 2px solid black;
   color: black; }
 
+.menu_closedContainer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3; }
+
+.menu_logo {
+  background: url("./assets/mini-logo.svg") no-repeat center;
+  height: 40px;
+  width: 40px;
+  margin: 28px; }
+
 .menu_hamburger {
   background: url("./assets/hamburger-16.svg") no-repeat center;
   background-size: cover;
@@ -267,17 +273,16 @@ h3 {
   margin-top: calc(100vh / 2 - 100px);
   cursor: pointer; }
 
-.gallery_container {
-  height: 90vh;
-  margin: 5vh 0 0 96px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center; }
+.gallery_imageThirds {
+  width: 100%;
+  margin-bottom: 5px; }
+  .gallery_imageThirds img {
+    width: 100%;
+    cursor: pointer; }
 
-.gallery_image_container {
-  height: calc(100% / 3 - 10px);
-  margin: 5px; }
-  .gallery_image_container img {
+.gallery_imageFull {
+  margin: 5px;
+  height: calc(100% - 10px); }
+  .gallery_imageFull img {
     height: 100%;
     cursor: pointer; }
