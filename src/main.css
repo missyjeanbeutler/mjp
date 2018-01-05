@@ -185,7 +185,7 @@ h3 {
   background: url("./assets/images/oceans/jamaica-15.jpg") no-repeat center;
   background-size: cover; }
 
-.menu_fullColumns {
+.menu_openContainer {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -220,17 +220,12 @@ h3 {
   justify-content: space-between;
   width: 100%; }
 
-.menu_logo {
-  background: url("./assets/mini-logo.svg") no-repeat center;
-  height: 40px;
-  width: 40px;
-  margin: 28px; }
-
-.menu_closedContainer {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 3; }
+.menu_logoFull {
+  background: url("./assets/full-logo.svg") no-repeat center;
+  background-size: cover;
+  height: 130px;
+  width: 130px;
+  margin: 50px 0 0 50px; }
 
 .menu_contact {
   margin-left: 50px; }
@@ -255,6 +250,18 @@ h3 {
 .menu_selected h3 {
   border-right: 2px solid black;
   color: black; }
+
+.menu_closedContainer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3; }
+
+.menu_logo {
+  background: url("./assets/mini-logo.svg") no-repeat center;
+  height: 40px;
+  width: 40px;
+  margin: 28px; }
 
 .menu_hamburger {
   background: url("./assets/hamburger-16.svg") no-repeat center;

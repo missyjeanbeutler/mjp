@@ -1,4 +1,4 @@
-.menu_fullColumns {
+.menu_openContainer{
   position: fixed;
   top: 0;
   bottom: 0;
@@ -39,19 +39,8 @@
   width: 100%;
 }
 
-.menu_logo {
-  // @include logo;
-  background: url('./assets/mini-logo.svg') no-repeat center;
-  height: 40px;
-  width: 40px;
-  margin: 28px;
-}
-
-.menu_closedContainer {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 3;
+.menu_logoFull {
+  @include logo;
 }
 
 .menu_contact {
@@ -86,6 +75,20 @@
     border-right: 2px solid black;
     color: black;
   }
+}
+
+.menu_closedContainer {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+}
+
+.menu_logo {
+  background: url('./assets/mini-logo.svg') no-repeat center;
+  height: 40px;
+  width: 40px;
+  margin: 28px;
 }
 
 .menu_hamburger {
