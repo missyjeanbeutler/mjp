@@ -30,7 +30,8 @@ export default class Menu extends Component {
               position: 'fixed',
               top: 0,
               bottom: 0,
-              display: style.left === -window.innerWidth ? 'none' : 'block'}}>
+              display: style.left === -window.innerWidth ? 'none' : 'block',
+              zIndex: 1}}>
               <div className='menu_openContainer'>
                 <div className='menu_info'>
                     <div className='menu_logoFull'/>
