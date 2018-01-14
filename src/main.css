@@ -95,7 +95,7 @@ button {
 
 @font-face {
   font-family: 'bold';
-  src: url("./assets/fonts/TGL_0-1451Eng.ttf") format("truetype"); }
+  src: url("./utils/TGL_0-1451Eng.ttf") format("truetype"); }
 
 h1, h2 {
   font-family: 'bold';
@@ -179,19 +179,19 @@ h3 {
         color: #DDD; }
 
 .home_oceans {
-  background: url("./assets/images/oceans/cabo-2.jpg") no-repeat center;
+  background: url("/images/oceans/cabo-2.jpg") no-repeat center;
   background-size: cover; }
 
 .home_mountains {
-  background: url("./assets/images/mountains/outdoors-2.jpg") no-repeat center;
+  background: url("/images/mountains/outdoors-2.jpg") no-repeat center;
   background-size: cover; }
 
 .home_polaroids {
-  background: url("./assets/images/oceans/jamaica-2.jpg") no-repeat center;
+  background: url("/images/oceans/jamaica-2.jpg") no-repeat center;
   background-size: cover; }
 
 .home_travel {
-  background: url("./assets/images/oceans/jamaica-15.jpg") no-repeat center;
+  background: url("/images/oceans/jamaica-15.jpg") no-repeat center;
   background-size: cover; }
 
 .menu_openContainer {
@@ -207,7 +207,7 @@ h3 {
 .menu_x {
   float: right;
   margin: 70px 100px;
-  background: url("./assets/x-15.svg") no-repeat center;
+  background: url("/svg/x.svg") no-repeat center;
   background-size: cover;
   height: 20px;
   width: 20px;
@@ -231,7 +231,7 @@ h3 {
   padding: 50px 0 50px 50px; }
 
 .menu_logoFull {
-  background: url("./assets/full-logo.svg") no-repeat center;
+  background: url("/svg/full-logo.svg") no-repeat center;
   background-size: cover;
   height: 130px;
   width: 130px; }
@@ -245,9 +245,9 @@ h3 {
 .menu_socials {
   display: flex; }
   .menu_socials .insta {
-    background: url("./assets/social-insta-14.svg") no-repeat center; }
+    background: url("/svg/social-insta.svg") no-repeat center; }
   .menu_socials .fb {
-    background: url("./assets/social-fb-13.svg") no-repeat center; }
+    background: url("/svg/social-fb-13.svg") no-repeat center; }
   .menu_socials div {
     background-size: cover;
     height: 50px;
@@ -265,13 +265,13 @@ h3 {
   z-index: 3; }
 
 .menu_logo {
-  background: url("./assets/mini-logo.svg") no-repeat center;
+  background: url("/svg/mini-logo.svg") no-repeat center;
   height: 40px;
   width: 40px;
   margin: 28px; }
 
 .menu_hamburger {
-  background: url("./assets/hamburger-16.svg") no-repeat center;
+  background: url("/svg/hamburger.svg") no-repeat center;
   background-size: cover;
   height: 20px;
   width: 25px;
@@ -294,18 +294,19 @@ h3 {
     height: 100%;
     cursor: pointer; }
 
-.gallery_loading {
-  position: fixed;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 100;
-  background: white;
-  border: 50px solid red; }
+.gallery_container_full {
+  height: 100vh;
+  padding: 43px 96px;
+  display: flex; }
+
+.gallery_container_thirds {
+  width: 100vw;
+  padding: 43px 43px 43px 96px;
+  column-count: 3;
+  column-gap: 7.5px; }
 
 .contact_logoFull {
-  background: url("./assets/full-logo.svg") no-repeat center;
+  background: url("/svg/full-logo.svg") no-repeat center;
   background-size: cover;
   height: 130px;
   width: 130px; }
@@ -318,9 +319,9 @@ h3 {
 .contact_socials {
   display: flex; }
   .contact_socials .insta {
-    background: url("./assets/social-insta-14.svg") no-repeat center; }
+    background: url("/svg/social-insta.svg") no-repeat center; }
   .contact_socials .fb {
-    background: url("./assets/social-fb-13.svg") no-repeat center; }
+    background: url("/svg/social-fb-13.svg") no-repeat center; }
   .contact_socials div {
     background-size: cover;
     height: 50px;

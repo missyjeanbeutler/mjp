@@ -2,7 +2,7 @@ node_modules
 build
 yarn.lock
 .DS_Store
-src/assets
+src/utils
 server/images
 notes.md 
 .vscode

@@ -18,14 +18,16 @@
   }
 }
 
-.gallery_loading {
-  position: fixed;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 100;
-  background: white;
-  border: 50px solid red;
+.gallery_container_full {
+  height: 100vh;
+  padding: 43px 96px;
+  display: flex;
+}
+
+.gallery_container_thirds {
+  width: 100vw;
+  padding: 43px 43px 43px 96px;
+  column-count: 3;
+  column-gap: 7.5px;
 }
 
