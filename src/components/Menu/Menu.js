@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Motion, StaggeredMotion, spring } from 'react-motion';
+import { Motion, spring } from 'react-motion';
 import NavLinks from './NavLinks/NavLinks';
 
 export default class Menu extends Component {

@@ -294,6 +294,16 @@ h3 {
     height: 100%;
     cursor: pointer; }
 
+.gallery_loading {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  background: white;
+  border: 50px solid red; }
+
 .contact_logoFull {
   background: url("./assets/full-logo.svg") no-repeat center;
   background-size: cover;
