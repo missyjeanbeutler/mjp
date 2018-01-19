@@ -34,6 +34,9 @@ export default class Gallery extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.match.params.name !== this.props.match.params.name) {
+      this.setState({
+        images: []
+      })
       axios.get(`/api/images/${nextProps.match.params.name}`).then(res => {
         let images = res.data.map(e => { 
           return `/images/${this.props.match.params.name}/${e}`

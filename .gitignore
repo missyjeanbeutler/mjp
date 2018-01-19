@@ -2,8 +2,8 @@ node_modules
 build
 yarn.lock
 .DS_Store
-src/utils
-server/images
+src/utils/
 notes.md 
 .vscode
 public
+src/utils/_mixins.scss

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 import NavLinks from './NavLinks/NavLinks';
+import { Link } from 'react-router-dom';
+// import Vivus from 'vivus';
 
 export default class Menu extends Component {
   constructor(props) {
@@ -9,6 +11,10 @@ export default class Menu extends Component {
       isOpen: props.menu
     }
   }
+
+  // componentDidMount() {
+  //   new Vivus('logo', {duration: 200, file: '/svg/mini-logo.svg'});
+  // }
  
   componentWillReceiveProps(newProps) {
     if(newProps.menu !== this.state.isOpen) {
@@ -21,7 +27,7 @@ export default class Menu extends Component {
   render() {
 
     return (
-      <div>
+      <div> 
         <Motion
         defaultStyle={{left: 0, opacity: 0}}
         style={{left: spring(this.state.isOpen ? 0 : -window.innerWidth), opacity: spring(this.state.isOpen ? 1 : 0)}}>
@@ -59,7 +65,9 @@ export default class Menu extends Component {
         <Motion style={{opacity: spring(this.state.isOpen ? 0 : 1)}}>
           {style => (
             <div className='menu_closedContainer'>
-              <div className='menu_logo' style={{...style}}/>
+              <Link to='/'>
+                <div id='logo' className='menu_logo' style={{...style}}/>
+              </Link>
               <div className='menu_hamburger' onClick={this.props.open} style={{...style}}/>
             </div>
           )}
