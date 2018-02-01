@@ -11,23 +11,32 @@ export default class Images extends React.Component {
   onLoad(img) {
     this.setState(({ loaded }) => {
       return { loaded: [...loaded, img] }
-    })
+    }, () => this.state.loaded.length === this.props.images.length && this.props.scroll ? this.scroll() : null)
   }
-   render() {
-     let images = this.state.loaded.map((e, i) => (
-      <Transition
-        key={i + e}
-        component='div'
-        enter={{ opacity: 1 }}
-        leave={{ opacity: 0 }}>  
-        { 
-          <div key={e + i} className={this.props.image}
-              onClick={this.props.changeSize}>
-            <img src={e} alt='oceans'/> 
-          </div>
-        }
-      </Transition>
-     ))
+
+  scroll() {
+    document.getElementById(this.props.scroll.slice(21)).scrollIntoView()
+  }
+
+  render() {
+    let images = this.state.loaded.map((e, i) => {
+    return (
+    <Transition
+      key={i + e}
+      component='div'
+      enter={{ opacity: 1 }}
+      leave={{ opacity: 0 }}>  
+      { 
+        <div key={e + i} 
+            className={this.props.image}
+            onClick={this.props.changeSize}
+            id={e}>
+          <img src={e} alt='oceans'/> 
+        </div>
+      }
+    </Transition>
+    )})
+
     return (
       <div className={this.props.container}>
         { this.state.loaded.length === this.props.images.length ? 

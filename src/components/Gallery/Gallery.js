@@ -8,16 +8,16 @@ export default class Gallery extends Component {
     this.state = {
       images: [],
       thirds: true,
-      show: false
+      show: false,
+      scroll: ''
     }
   }
 
   changeSize = (e) => {  
-    let el = e.target
+    let el = e.target.src
     this.setState({
-      thirds: !this.state.thirds
-    }, () => {
-      el.scrollIntoView()
+      thirds: !this.state.thirds,
+      scroll: el
     })
   }
 
@@ -56,16 +56,20 @@ export default class Gallery extends Component {
         { !this.state.images.length ? null :
            this.state.thirds ? 
           <Images 
+              key='thirds'
               images={ this.state.images }
               container='gallery_container_thirds'
               image='gallery_imageThirds'
-              changeSize={ this.changeSize } />
+              changeSize={ this.changeSize }
+              scroll={this.state.scroll} />
           :
           <Images
+              key='full'
               images={ this.state.images }
               container='gallery_container_full'
               image='gallery_imageFull'
-              changeSize={ this.changeSize } />  }
+              changeSize={ this.changeSize }
+              scroll={this.state.scroll} />  }
       </div>
 
     )
