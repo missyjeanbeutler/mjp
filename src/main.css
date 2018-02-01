@@ -305,11 +305,8 @@ h3 {
   column-count: 3;
   column-gap: 7.5px; }
 
-.contact_logoFull {
-  background: url("/svg/full-logo.svg") no-repeat center;
-  background-size: cover;
-  height: 130px;
-  width: 130px; }
+.hidden {
+  display: none; }
 
 .contact_line {
   height: 125px;

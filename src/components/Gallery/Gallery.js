@@ -35,6 +35,9 @@ export default class Gallery extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.match.params.name !== this.props.match.params.name) {
+      this.setState({
+        images: []
+      })
       axios.get(`/api/images/${nextProps.match.params.name}`).then(res => {
         let images = res.data.map(e => { 
           return `/images/${this.props.match.params.name}/${e}`
@@ -48,22 +51,23 @@ export default class Gallery extends Component {
 
   render() {
 
-
     return (
       <div>
-          { this.state.thirds ? 
+        { !this.state.images.length ? null :
+           this.state.thirds ? 
           <Images 
               images={ this.state.images }
               container='gallery_container_thirds'
               image='gallery_imageThirds'
-              changeSize={ this.changeSize }/>
+              changeSize={ this.changeSize } />
           :
           <Images
               images={ this.state.images }
               container='gallery_container_full'
               image='gallery_imageFull'
-              changeSize={ this.changeSize }/> }
+              changeSize={ this.changeSize } />  }
       </div>
+
     )
   }
 }

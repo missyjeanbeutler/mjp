@@ -1,28 +1,48 @@
 import React from 'react';
-import AnimatedMount from '../../helpers/AnimatedMount';
+import Transition from 'react-motion-ui-pack'
 
-function Images(props) {
-  const images = props.images.map((e, i) => (
-    <div key={i} className={props.image}
-        onClick={props.changeSize}>
-      <img src={e} alt='oceans'/> 
-    </div>
-  ))
-
-  return (
-    <div className={props.container}>
-      { images }
-    </div>
-  )
+export default class Images extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      loaded: []
+    }
+  }
+  onLoad(img) {
+    this.setState(({ loaded }) => {
+      return { loaded: [...loaded, img] }
+    })
+  }
+   render() {
+     let images = this.state.loaded.map((e, i) => (
+      <Transition
+        key={i + e}
+        component='div'
+        enter={{ opacity: 1 }}
+        leave={{ opacity: 0 }}>  
+        { 
+          <div key={e + i} className={this.props.image}
+              onClick={this.props.changeSize}>
+            <img src={e} alt='oceans'/> 
+          </div>
+        }
+      </Transition>
+     ))
+    return (
+      <div className={this.props.container}>
+        { this.state.loaded.length === this.props.images.length ? 
+        images 
+        :
+        <div className="hidden">
+          {this.props.images.map((e, i) =>
+            <img 
+              src={e} 
+              onLoad={this.onLoad.bind(this, e)} 
+              key={i + e}
+              alt='hidden' />
+          )}
+        </div> }
+      </div>
+    )
+  }
 }
-
-  export default AnimatedMount({
-    unmountedStyle: {
-      opacity: 0,
-      transition: 'opacity 250ms ease-out',
-    },
-    mountedStyle: {
-      opacity: 1,
-      transition: 'opacity 1.5s ease-out',
-    },
-  })(Images);

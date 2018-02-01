@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Motion, spring } from 'react-motion';
 import NavLinks from './NavLinks/NavLinks';
 import { Link } from 'react-router-dom';
-// import Vivus from 'vivus';
 
 export default class Menu extends Component {
   constructor(props) {
@@ -12,10 +11,6 @@ export default class Menu extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   new Vivus('logo', {duration: 200, file: '/svg/mini-logo.svg'});
-  // }
- 
   componentWillReceiveProps(newProps) {
     if(newProps.menu !== this.state.isOpen) {
       this.setState({
