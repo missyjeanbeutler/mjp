@@ -1,7 +1,22 @@
 @mixin logo {
-  background: url('./assets/full-logo.svg') no-repeat center;
+  background: url('/svg/full-logo.svg') no-repeat center;
   background-size: cover;
   height: 130px;
   width: 130px;
-  margin: 50px 0 0 50px;
+}
+
+@mixin socials {
+  display: flex; 
+  .insta {
+    background: url('/svg/social-insta.svg') no-repeat center;
+  }
+  .fb {
+    background: url('/svg/social-fb.svg') no-repeat center;
+  }
+  div {
+    background-size: cover;
+    height: 50px;
+    width:50px;
+    margin: 5px;
+  }
 }

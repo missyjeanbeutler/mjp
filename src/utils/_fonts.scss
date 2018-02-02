@@ -3,11 +3,10 @@
 
 @font-face {
   font-family: 'bold';
-  src: url('./assets/fonts/TGL_0-1451Eng.ttf') format('truetype');
+  src: url('./utils/TGL_0-1451Eng.ttf') format('truetype');
 }
 
 h1, h2 {
-  // font-family: 'PT Serif', serif;;
   font-family: 'bold'; 
   font-weight: 200;
 }
@@ -20,7 +19,6 @@ h1 {
 }
 
 h4, p {
-  // font-family: 'PT Mono', monospace;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   letter-spacing: 2px;

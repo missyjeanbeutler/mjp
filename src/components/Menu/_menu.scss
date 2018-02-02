@@ -12,7 +12,7 @@
 .menu_x {
   float: right;
   margin: 70px 100px;
-  background: url('./assets/x-15.svg') no-repeat center;
+  background: url('/svg/x.svg') no-repeat center;
   background-size: cover;
   height: 20px;
   width: 20px;
@@ -37,6 +37,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  padding: 50px 0 50px 50px;
 }
 
 .menu_logoFull {
@@ -44,7 +45,6 @@
 }
 
 .menu_contact {
-  margin-left: 50px;
   h3 {
     margin: 10px 0;
   }
@@ -54,20 +54,7 @@
 }
 
 .menu_socials {
-  margin: 0 0 50px 45px;
-  display: flex; 
-  .menu_insta {
-    background: url('./assets/social-insta-14.svg') no-repeat center;
-  }
-  .menu_fb {
-    background: url('./assets/social-fb-13.svg') no-repeat center;
-  }
-  div {
-    background-size: cover;
-    height: 50px;
-    width:50px;
-    margin: 5px;
-  }
+  @include socials;
 }
 
 .menu_selected {
@@ -85,14 +72,14 @@
 }
 
 .menu_logo {
-  background: url('./assets/mini-logo.svg') no-repeat center;
+  background: url('/svg/mini-logo.svg') no-repeat center;
   height: 40px;
   width: 40px;
   margin: 28px;
 }
 
 .menu_hamburger {
-  background: url('./assets/hamburger-16.svg') no-repeat center;
+  background: url('/svg/hamburger.svg') no-repeat center;
   background-size: cover;
   height: 20px;
   width: 25px;

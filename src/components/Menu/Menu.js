@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Motion, StaggeredMotion, spring } from 'react-motion';
+import { Motion, spring } from 'react-motion';
 import NavLinks from './NavLinks/NavLinks';
+import { Link } from 'react-router-dom';
 
 export default class Menu extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ export default class Menu extends Component {
       isOpen: props.menu
     }
   }
- 
+
   componentWillReceiveProps(newProps) {
     if(newProps.menu !== this.state.isOpen) {
       this.setState({
@@ -18,10 +19,11 @@ export default class Menu extends Component {
     }
   }
 
+
   render() {
 
     return (
-      <div>
+      <div> 
         <Motion
         defaultStyle={{left: 0, opacity: 0}}
         style={{left: spring(this.state.isOpen ? 0 : -window.innerWidth), opacity: spring(this.state.isOpen ? 1 : 0)}}>
@@ -44,8 +46,8 @@ export default class Menu extends Component {
                       <a href='tel:1-801-368-3141'><h3>801.368.3141</h3></a>
                     </div>
                     <div className='menu_socials' >
-                      <a href=''><div className='menu_insta'/></a>
-                      <a href=''><div className='menu_fb'/></a>
+                      <a href=''><div className='insta'/></a>
+                      <a href=''><div className='fb'/></a>
                     </div>
                 </div>
                 <div style={{width: '100%'}}>
@@ -59,7 +61,9 @@ export default class Menu extends Component {
         <Motion style={{opacity: spring(this.state.isOpen ? 0 : 1)}}>
           {style => (
             <div className='menu_closedContainer'>
-              <div className='menu_logo' style={{...style}}/>
+              <Link to='/'>
+                <div id='logo' className='menu_logo' style={{...style}}/>
+              </Link>
               <div className='menu_hamburger' onClick={this.props.open} style={{...style}}/>
             </div>
           )}
