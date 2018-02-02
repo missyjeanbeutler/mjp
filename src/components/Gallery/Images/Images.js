@@ -15,7 +15,7 @@ export default class Images extends React.Component {
   }
 
   scroll() {
-    document.getElementById(this.props.scroll.slice(21)).scrollIntoView()
+    document.getElementById(this.props.scroll.slice(21)).scrollIntoView({inline: 'center'})
   }
 
   render() {
@@ -23,7 +23,7 @@ export default class Images extends React.Component {
     return (
     <Transition
       key={i + e}
-      component='div'
+      component={false}
       enter={{ opacity: 1 }}
       leave={{ opacity: 0 }}>  
       { 
@@ -31,7 +31,7 @@ export default class Images extends React.Component {
             className={this.props.image}
             onClick={this.props.changeSize}
             id={e}>
-          <img src={e} alt='oceans'/> 
+          <img src={e} alt={this.props.alt}/> 
         </div>
       }
     </Transition>

@@ -36,7 +36,8 @@ export default class Gallery extends Component {
   componentWillReceiveProps(nextProps) {
     if(nextProps.match.params.name !== this.props.match.params.name) {
       this.setState({
-        images: []
+        images: [],
+        scroll: ''
       })
       axios.get(`/api/images/${nextProps.match.params.name}`).then(res => {
         let images = res.data.map(e => { 
@@ -59,9 +60,10 @@ export default class Gallery extends Component {
               key='thirds'
               images={ this.state.images }
               container='gallery_container_thirds'
-              image='gallery_imageThirds'
+              image='gallery_imageThirds' 
               changeSize={ this.changeSize }
-              scroll={this.state.scroll} />
+              scroll={this.state.scroll}
+              alt={this.props.match.params.name} />
           :
           <Images
               key='full'
@@ -69,7 +71,8 @@ export default class Gallery extends Component {
               container='gallery_container_full'
               image='gallery_imageFull'
               changeSize={ this.changeSize }
-              scroll={this.state.scroll} />  }
+              scroll={this.state.scroll} 
+              alt={this.props.match.params.name} />  }
       </div>
 
     )

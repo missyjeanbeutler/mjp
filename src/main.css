@@ -297,7 +297,8 @@ h3 {
 .gallery_container_full {
   height: 100vh;
   padding: 43px 96px;
-  display: flex; }
+  display: flex;
+  flex-direction: row; }
 
 .gallery_container_thirds {
   width: 100vw;

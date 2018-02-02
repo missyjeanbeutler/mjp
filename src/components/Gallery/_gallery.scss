@@ -14,7 +14,6 @@
   img {
     height: 100%;
     cursor: pointer;
-
   }
 }
 
@@ -22,6 +21,7 @@
   height: 100vh;
   padding: 43px 96px;
   display: flex;
+  flex-direction: row;
 }
 
 .gallery_container_thirds {
