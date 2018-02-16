@@ -60,7 +60,7 @@ export default class Menu extends Component {
         </Motion>
         <Motion style={{opacity: spring(this.state.isOpen ? 0 : 1)}}>
           {style => (
-            <div className='menu_closedContainer'>
+            <div className='menu_closedContainer' style={{...style}}>
               <Link to='/'>
                 <div id='logo' className='menu_logo' style={{...style}}/>
               </Link>

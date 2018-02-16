@@ -19,9 +19,11 @@ export default class Contact extends React.Component {
   }
 
   render() {
+
     return (
       <div>
-        { this.state.loaded ? <Transition
+        { this.state.loaded ? 
+        <Transition
           component='div'
           enter={{ 
             opacity: spring(1, {stiffness: 40, damping: 20}),
@@ -30,7 +32,7 @@ export default class Contact extends React.Component {
             <div key='contact' className='contact_info'>
               <img src='/svg/full-logo.svg' 
                 style={{height: '130px',
-                width: '130px'}}/>
+                width: '130px'}} alt='logo'/>
               <div className='contact_line'/>
               <div>
                 <div className='contact_contact' >
@@ -49,7 +51,7 @@ export default class Contact extends React.Component {
             </div>
         </Transition>
         : null }
-        <img style={{display: 'none'}} src='/svg/full-logo.svg' onLoad={this.onLoad}/>
+        <img style={{display: 'none'}} src='/svg/full-logo.svg' onLoad={this.onLoad} alt='hidden logo'/>
       </div>
     )
   }
