@@ -178,22 +178,6 @@ h3 {
       .home_gallery div div p {
         color: #DDD; }
 
-.home_oceans {
-  background: url("/images/oceans/cabo-2.jpg") no-repeat center;
-  background-size: cover; }
-
-.home_mountains {
-  background: url("/images/mountains/outdoors-2.jpg") no-repeat center;
-  background-size: cover; }
-
-.home_polaroids {
-  background: url("/images/oceans/jamaica-2.jpg") no-repeat center;
-  background-size: cover; }
-
-.home_travel {
-  background: url("/images/oceans/jamaica-15.jpg") no-repeat center;
-  background-size: cover; }
-
 .menu_openContainer {
   position: fixed;
   top: 0;
@@ -262,7 +246,10 @@ h3 {
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 3; }
+  z-index: 3;
+  bottom: 0;
+  width: 96px;
+  background: rgba(255, 255, 255, 0.35); }
 
 .menu_logo {
   background: url("/svg/mini-logo.svg") no-repeat center;
@@ -342,3 +329,18 @@ h3 {
     margin: 10px 0; }
   .contact_contact a h3:hover {
     color: #777; }
+
+.contact_socials:hover {
+  animation: 0.5s draw linear forwards; }
+
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important; }
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: blueviolet; }

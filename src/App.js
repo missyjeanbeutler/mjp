@@ -6,7 +6,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      menuOpen: false
+      menuOpen: false,
+      loading: true
     }
   }
 
@@ -22,7 +23,15 @@ class App extends Component {
     })
   }
 
+  showPage = () => {
+    document.body.classList.remove('js-loading');
+  }
+
   render() {
+
+    document.body.classList.add('js-loading');
+    window.addEventListener("load", this.showPage);
+
     return (
       <div>
         <Menu close={this.closeMenu} open={this.openMenu} menu={this.state.menuOpen}/>
