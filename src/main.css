@@ -48,19 +48,6 @@ a {
   background: transparent;
   text-decoration: none; }
 
-/* change colours to suit your needs */
-ins {
-  background-color: #ff9;
-  color: #000;
-  text-decoration: none; }
-
-/* change colours to suit your needs */
-mark {
-  background-color: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: bold; }
-
 del {
   text-decoration: line-through; }
 
@@ -71,15 +58,6 @@ abbr[title], dfn[title] {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
-
-/* change border colour to suit your needs */
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #cccccc;
-  margin: 1em 0;
-  padding: 0; }
 
 input, select {
   vertical-align: middle; }
@@ -333,14 +311,60 @@ h3 {
 .contact_socials:hover {
   animation: 0.5s draw linear forwards; }
 
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important; }
-
-.loading {
-  position: fixed;
+.love_main {
   width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  background: blueviolet; }
+  height: 100vh; }
+
+.love_header {
+  height: 30vh;
+  width: calc(100vw - 210px);
+  margin: 0 105px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .love_header p {
+    text-align: center; }
+  .love_header h1 {
+    text-align: center;
+    margin-bottom: 15px; }
+    .love_header h1 div {
+      background: url("/svg/amper.svg") no-repeat center;
+      background-size: cover;
+      height: 57px;
+      width: 70px;
+      display: inline-block;
+      opacity: 0.085;
+      margin: -12px -32px -12px -25px; }
+
+.love_image_container {
+  width: 100vw;
+  height: 70vh; }
+  .love_image_container div {
+    height: 100%;
+    width: 50%;
+    display: inline-block; }
+
+.love_images {
+  width: 50vw;
+  height: 70vh;
+  display: flex; }
+  .love_images div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(135deg, rgba(28, 30, 49, 0.3) 0%, rgba(28, 30, 49, 0.3) 100%); }
+    .love_images div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .love_images div h2 {
+      position: absolute;
+      bottom: 45px;
+      right: 40px;
+      color: white; }
+    .love_images div p {
+      position: absolute;
+      bottom: 25px;
+      right: 40px;
+      color: white; }

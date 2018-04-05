@@ -24,8 +24,8 @@ const galleries = [
   },
   {
     style: 'home_travel',
-    title: 'TRAVEL',
-    url: '/gallery/travel',
+    title: 'LOVE',
+    url: '/love',
     background: "url('/images/oceans/jamaica-15.jpg') no-repeat center"
   }
 ]
@@ -47,6 +47,7 @@ export default function Home() {
     <div className='home_splash'>
       <Transition
         component={false}
+        runOnMount={true}
         enter={{ 
           opacity: spring(1, {stiffness: 40, damping: 20}), 
           translateY: spring(0, {stiffness: 40, damping: 20}) }}
@@ -59,6 +60,7 @@ export default function Home() {
       </Transition>
       <Transition
         component={false}
+        runOnMount={true}
         enter={{ opacity: spring(1, {stiffness: 40, damping: 20}) }}
         leave={{ opacity: 0 }}>
           <div className='home_galleriesContainer' key='galleryLinks'>

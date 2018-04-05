@@ -8,7 +8,6 @@ export default class Gallery extends Component {
     this.state = {
       images: [],
       thirds: true,
-      show: false,
       scroll: ''
     }
   }
